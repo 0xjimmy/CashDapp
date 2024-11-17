@@ -4,7 +4,6 @@ import Dapp from './Dapp';
 
 const Layout = () => {
   const { primaryWallet } = useDynamicContext();
-  console.log({ primaryWallet })
   return (
     <>
       <div className='flex gap-1 items-end p-4 justify-center my-4'>
@@ -14,9 +13,9 @@ const Layout = () => {
 
       {primaryWallet === null
         ? (<div className='w-full flex items-center justify-center'>
-          <Button variant="secondary" size="lg">
+          {/* <Button variant="secondary" size="lg"> */}
             <DynamicConnectButton>Login</DynamicConnectButton>
-          </Button>
+          {/* </Button> */}
           </div>)
         : <Dapp />
       }

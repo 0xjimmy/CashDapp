@@ -12,13 +12,11 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "./ui/drawer"
-import { ScanComponent, scanQr } from "./QRScan"
 
 export function Pay() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <ScanComponent callback={console.log} />
         <Button className="flex-1 flex-grow"><SendIcon/>Pay</Button>
       </DrawerTrigger>
       <DrawerContent>
@@ -32,7 +30,7 @@ export function Pay() {
                 <Label htmlFor="to">Reciept</Label>
                 <div className="flex gap-2">
                 <Input type="text" className="flex-4" id="to" placeholder="Reciept" />
-                <Button onClick={scanQr} className="flex-1"><QrCodeIcon /></Button>
+                <Button className="flex-1"><QrCodeIcon /></Button>
                 </div>
               </div>
               <div className="grid w-full max-w-sm items-center gap-1.5 my-2">
