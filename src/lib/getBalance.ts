@@ -57,11 +57,11 @@ export const transfer = async (primaryWallet: ReturnType<typeof useDynamicContex
       BALANCES_ADDRESS,
       await signer.getAddress()
     );
-    input.add64(10n);
+    input.add64(500n);
     const encryptedInput = input.encrypt();
 
     const response = await contract.transferEnc(
-      '0xa557cE11bB31495C2758990E30357003065C9179',
+      '0x36528944B7c98a7e4EF7e90C24468cC8131f2D80',
       encryptedInput.handles[0],
       toHex(encryptedInput.inputProof)
     );

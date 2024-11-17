@@ -12,8 +12,11 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "./ui/drawer"
+import { transfer } from "@/lib/getBalance"
+import { useDynamicContext } from "@dynamic-labs/sdk-react-core"
 
 export function Pay() {
+  const { primaryWallet } = useDynamicContext();
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -40,7 +43,7 @@ export function Pay() {
             </div>
           </div>
           <DrawerFooter>
-            <Button>Pay</Button>
+            <Button onClick={() => transfer(primaryWallet!)}>Pay</Button>
             <DrawerClose asChild>
               <Button variant="outline">Cancel</Button>
             </DrawerClose>
